@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho fixo no topo */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav a:hover {
+    color: #c7802f;
+}
+
+/* Imagem de fundo tocando a barra superior */
+.img-container {
+    position: relative;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    width: 100%;
+    margin-top: -80px; /* Remove o espaço da barra de navegação */
+}
+
+.imgfundo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre toda a área sem distorcer */
+    opacity: 0.7; /* Deixa a imagem mais transparente */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Conteúdo sobre a imagem de fundo */
+.conteudo-sobre-fundo {
+    position: relative;
+    z-index: 2; /* Fica sobre a imagem */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* Frase em destaque */
+.frase-destaque {
+    font-size: medium;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Botão de contato sobre a imagem */
+.btn-fale-conosco {
+    padding: 10px 20px;
+    background-color: #c7802f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-fale-conosco:hover {
+    background-color: #a66e24;
+}
+
+/* Seção de serviços */
+.servicos {
+    padding: 50px 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #c7802f;
+}
+
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.servico {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.servico h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #c7802f;
+}
+
+.servico p {
+    font-size: 16px;
+}
+
+.servico:hover {
+    background-color: #c7802f;
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.servico:hover h3,
+.servico:hover p {
+    color: white;
+}
+
+/* Link para WhatsApp */
+.link-whatsapp {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+}
+
+.link-whatsapp img {
+    width: 60px;
+}
+/* Logo da barbearia acima da frase */
+.logo-destaque {
+    width: 200px; /* Ajuste o tamanho do logo conforme necessário */
+    margin-bottom: 40px; /* Espaço entre o logo e a frase */
+}
+/* Frase em destaque */
+.frase-destaque {
+    font-size: 28px;
+    font-weight:300;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: center; /* Centralização da frase */
+}
+
+/* Botão de contato sobre a imagem */
+.btn-fale-conosco {
+    margin-top: 20px; /* Espaço entre a frase e o botão */
+    padding: 10px 20px;
+    background-color: #c7802f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .servicos-container {
+        grid-template-columns: 1fr;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+
+    .frase-destaque {
+        font-size: 24px;
+    }
+}
+/* Estilo para o rodapé */
+.footer {
+    background-color: #222; /* Cor de fundo do rodapé */
+    color: white;           /* Cor do texto */
+    text-align: center;     /* Centraliza o texto */
+    padding: 20px;          /* Espaçamento interno */
+    position: relative;     /* Para manter o rodapé no fluxo da página */
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+/* Para telas de celulares (até 600px de largura) */
+@media (max-width: 600px) {
+    /* Ajuste da barra de navegação */
+    header nav a {
+        font-size: 14px; /* Reduz o tamanho da fonte nos links */
+    }
+
+    /* Ajusta o tamanho do logo no topo */
+    .logo-destaque {
+        width: 120px; /* Reduz o tamanho do logo */
+        margin-bottom: 20px;
+    }
+
+    /* Centraliza e ajusta o tamanho da frase */
+    .frase-destaque {
+        font-size: 15px; /* Reduz o tamanho da fonte */
+        margin: 10px 20px; /* Adiciona margem interna */
+    }
+
+    /* Redimensiona o botão para caber melhor em telas menores */
+    .btn-fale-conosco {
+        padding: 8px 15px;
+        font-size: 14px;
+        width: 80%; /* O botão agora ocupa 80% da largura em telas pequenas */
+        margin-top: 15px;
+    }
+
+    /* Ajuste na seção de serviços */
+    .servicos-container {
+        grid-template-columns: 1fr; /* Uma única coluna em celulares */
+    }
+
+    /* Ajuste no rodapé */
+    .footer {
+        padding: 15px;
+        font-size: 12px;
+    }
+
+    /* Ajuste na página Dia do Noivo */
+    .background {
+        margin-top: 100px; /* Ajusta a margem superior considerando a barra fixa */
+    }
+
+    .modal-content {
+        width: 90%; /* Aumenta a largura do modal para telas pequenas */
+    }
+}
+
+/* Para tablets e iPads (entre 601px e 1024px de largura) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Ajuste da barra de navegação */
+    header nav a {
+        font-size: 16px;
+    }
+
+    /* Ajusta o tamanho do logo no topo */
+    .logo-destaque {
+        width: 150px; /* Logo maior em tablets */
+        margin-bottom: 25px;
+    }
+
+    /* Centraliza e ajusta o tamanho da frase */
+    .frase-destaque {
+        font-size: 15px;
+        margin: 20px 40px;
+    }
+
+    /* Redimensiona o botão para caber melhor em telas médias */
+    .btn-fale-conosco {
+        padding: 10px 20px;
+        font-size: 16px;
+        width: 70%;
+        margin-top: 20px;
+    }
+
+    /* Ajuste na seção de serviços */
+    .servicos-container {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
+    }
+
+    /* Ajuste no rodapé */
+    .footer {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    /* Ajuste na página Dia do Noivo */
+    .background {
+        margin-top: 120px; /* Ajusta a margem superior para tablets */
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+/* Ajuste para o background ocupar toda a tela */
+.background {
+    background-image: url('./img/imagen-dia-do-noivoat.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;  /* Usa 100% da largura da tela */
+    height: 100vh; /* Usa 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Remove qualquer espaço extra */
+}
+
+/* Para o botão ficar melhor centralizado e responsivo */
+.buttons button {
+    width: 80%; /* O botão ocupa 80% da tela em celulares */
+    max-width: 300px; /* Define um limite máximo para o tamanho do botão */
+    padding: 12px;
+    margin: 10px auto; /* Centraliza o botão e cria espaçamento */
+    font-size: 16px;
+    background-color: #c7802f;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #a66e24;
+    transform: scale(1.05);
+}
+
+/* Posicionamento do ícone de WhatsApp */
+.link-whatsapp {
+    position: fixed;
+    bottom: 20px; /* Mantém uma distância uniforme do rodapé */
+    right: 10px;  /* Aproxima mais da borda direita */
+    z-index: 1000;
+}
+
+.link-whatsapp img {
+    width: 50px; /* Ajusta o tamanho do ícone */
+    height: 50px; /* Mantém a proporção quadrada */
+    transition: transform 0.3s ease;
+}
+
+.link-whatsapp:hover img {
+    transform: scale(1.1); /* Aumenta um pouco o ícone ao passar o mouse */
+}
+
+/* Para telas menores (celulares) */
+@media (max-width: 600px) {
+    .background {
+        margin: 0; /* Remove qualquer margem em celulares */
+        height: 100vh; /* Garante que ocupe toda a altura da tela */
+    }
+
+    .buttons button {
+        width: 90%; /* O botão ocupa quase toda a largura da tela em celulares */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .link-whatsapp {
+        right: 15px; /* Ajuste fino para o ícone do WhatsApp */
+        bottom: 15px;
+    }
+    .conteudo-sobre-fundo{
+        height: 105%;
+    }
+}
+
+
+
+

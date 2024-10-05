@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.background {
+    background-image: url('./img/imagen-dia-do-noivoat.png');
+    /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    /* Remove margens */
+    padding-bottom: 60px;
+    /* Espaço para o rodapé */
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: #c7802f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #a66e24;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    color: black;
+    border-radius: 8px;
+}
+
+.modal-content h2 {
+    text-align: center;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.modal-content li {
+    margin-bottom: 15px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Cabeçalho fixo no topo */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+header nav a:hover {
+    color: #c7802f;
+}
+
+/* Estilo para o rodapé */
+.footer {
+    background-color: #222;
+    color: #faf5f5;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    /* Mantém o rodapé no fluxo normal da página */
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Estilo para as perguntas */
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content li {
+    margin-bottom: 15px;
+    background-color: #333;
+    /* Cor de fundo das perguntas */
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra leve */
+    border-left: 5px solid transparent;
+    /* Adicionando barra lateral que mudará de cor ao passar o mouse */
+}
+
+.modal-content li:hover {
+    background-color: #444;
+    /* Cor ao passar o mouse */
+    transform: scale(1.02);
+    /* Leve aumento ao passar o mouse */
+    border-left-color: #c7802f;
+    /* Cor da barra ao passar o mouse */
+}
+
+.modal-content li.active {
+    background-color: #555;
+    /* Cor de fundo quando ativo */
+}
+
+.modal-content li.active p {
+    display: block;
+    opacity: 1;
+    max-height: 500px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.modal-content p {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #e0e0e0;
+    /* Fundo para as respostas */
+    color: #333;
+    /* Cor do texto da resposta */
+    border-left: 5px solid #c7802f;
+    /* Barra lateral colorida */
+    border-radius: 5px;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #c7802f;
+    cursor: pointer;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .buttons button {
+        width: 80%;
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 15px;
+    }
+}
+header nav a {
+    font-size: 20px;
+    /* Reduz o tamanho da fonte nos links */
+}
+
+@media (max-width: 600px) { 
+
+    /* Ajustes para celulares */
+    .background {
+        /* Permite que o fundo se ajuste ao conteúdo em celulares */
+        background-size: cover;
+        /* Garante que a imagem cubra todo o fundo */
+        padding-bottom: 10vh;
+    }
+
+    .overlay {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .buttons button {
+        width: 90%;
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 10px;
+    }
+
+    /* Mantém o rodapé na parte inferior em telas menores */
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    
+}
+
+/* Ajuste para o WhatsApp fixo */
+.link-whatsapp {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.link-whatsapp img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.link-whatsapp:hover img {
+    transform: scale(1.1);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1px;
+}
+
+header nav a:hover {
+    color: #c7802f;
+}
+
+.formulario-fale-conosco {
+    width: 90%;
+    /* Ajuste a largura para 90% da tela */
+    padding: 15px;
+    /* Reduza o padding para caber melhor */
+}
+header nav a {
+    font-size: 20px;
+    /* Reduz o tamanho da fonte nos links */
+}
+@media (max-width: 600px) {
+    header nav a {
+        font-size: 13px;
+    }
+}
+

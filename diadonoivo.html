@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia do Noivo - Barbearia Prime</title>
+    <link rel="stylesheet" href="dia-do-noivo.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho com navegação fixa -->
+    <header class="header">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="diadonoivo.html">Dia do Noivo</a>
+            <a href="index.html#servicos">Nossos Serviços</a>
+            <a href="https://api.whatsapp.com/send?phone=5512996819368&text=Olá, gostaria de agendar um horário!'">Fale Conosco</a>
+        </nav>
+    </header>
+
+    <!-- Imagem de fundo ocupando toda a tela -->
+    <div class="background">
+        <div class="overlay">
+            <h1>Pacote Especial - Dia do Noivo</h1>
+            <div class="buttons">
+                <button onclick="location.href='https://api.whatsapp.com/send?phone=5512996819368&text=Olá, gostaria de agendar um horário!'">Marcar Horário</button>
+                <button onclick="mostrarDuvidas()">Dúvidas Frequentes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Dúvidas -->
+    <div class="modal" id="modalDuvidas">
+        <div class="modal-content">
+            <span class="close" onclick="esconderDuvidas()">&times;</span>
+            <h2>Dúvidas Frequentes</h2>
+            <ul>
+                <li><strong>1. O que inclui o pacote do Dia do Noivo?</strong>
+                    <p>O pacote inclui corte de cabelo, barba, limpeza de pele e um brinde especial para o noivo.</p>
+                </li>
+                <li><strong>2. Quanto tempo antes do casamento devo agendar?</strong>
+                    <p>Recomendamos que agende pelo menos uma semana antes para garantir disponibilidade.</p>
+                </li>
+                <li><strong>3. Quantos acompanhantes o noivo pode levar?</strong>
+                    <p>O noivo pode levar até dois acompanhantes para o dia especial.</p>
+                </li>
+                <li><strong>4. Quais formas de pagamento são aceitas?</strong>
+                    <p>Aceitamos cartões de crédito, débito e pagamentos via Pix.</p>
+                </li>
+                <li><strong>5. Posso personalizar o pacote?</strong>
+                    <p>Sim, temos opções de personalização para incluir outros serviços que desejar.</p>
+                </li>
+                <li><strong>6. O que acontece se eu precisar cancelar o agendamento?</strong>
+                    <p>É possível cancelar com até 48 horas de antecedência sem custos adicionais.</p>
+                </li>
+                <li><strong>7. O pacote inclui alguma preparação para fotos?</strong>
+                    <p>Sim, incluímos finalização especial para garantir que o noivo esteja impecável nas fotos.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="dia-do-noivo.js"></script>
+
+    <a href="https://api.whatsapp.com/send?phone=5512996819368" class="link-whatsapp" >
+        <img src="./img/whatsapp (2).png" alt="Link para o WhatsApp">
+    </a>
+
+    <!-- Rodapé com frase de direitos reservados -->
+<footer class="footer">
+    <p>&copy; 2024 Barbearia Prime. Todos os direitos reservados.</p>
+</footer>
+
+
+</body>
+
+</html>
